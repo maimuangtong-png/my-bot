@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "python-project"
+version = "0.1.0"
+description = "A starter Python project"
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [
+  { name = "Project Author" }
+]
+dependencies = [
+    "flask>=3.1.0",
+    "python-telegram-bot[job-queue]>=21.0",
+]
+
+[project.scripts]
+python-project = "python_project.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
