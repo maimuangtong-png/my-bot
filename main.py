@@ -23,10 +23,9 @@ from telegram.ext import (
 TOKEN = os.environ.get("BOT_TOKEN")
 
 TIMER_OPTIONS = {
-    "💩 เข้าห้องน้ำ 30 นาที": ("เข้าห้องน้ำ", 30),
-    "🍊 ไปฉี่ 10นาที": ("ไปฉี่", 10),
+    "💩 เข้าห้องน้ำ 25 นาที": ("เข้าห้องน้ำ", 25),
+    "💦 ไปฉี่ 10นาที": ("ไปฉี่", 10),
     "🚬 สูบบุหรี่ 7 นาที": ("สูบบุหรี่", 7),
-    "🛒 ไปร้านค้า 20นาที": ("ไปร้านค้า", 20),
 }
 RETURN_BUTTON = "🛬 กลับที่นั่ง"
 LOCAL_TIMEZONE = ZoneInfo("Asia/Bangkok")
@@ -36,9 +35,8 @@ MIDNIGHT_RESET_MESSAGE = (
 )
 
 REPLY_KEYBOARD = [
-    ["💩 เข้าห้องน้ำ 30 นาที"],
-    ["🍊 ไปฉี่ 10นาที", "🚬 สูบบุหรี่ 7 นาที"],
-    ["🛒 ไปร้านค้า 20นาที"],
+    ["💩 เข้าห้องน้ำ 25 นาที"],
+    ["💦 ไปฉี่ 10นาที", "🚬 สูบบุหรี่ 7 นาที"],
     ["🛬 กลับที่นั่ง"],
 ]
 
@@ -197,7 +195,7 @@ async def keyboard_button_click(
             f"⏳ รวมเวลาที่ใช้ไปทั้งหมดวันนี้: {total_minutes} นาที "
             f"{total_seconds} วินาที\n"
             f"📊 สถิติวันนี้: กดไปแล้วทั้งหมด {stats.total_entries} ครั้ง\n"
-            f"   รายการที่กดไปวันนี้: {activity_summary}\n"
+            f"    รายการที่กดไปวันนี้: {activity_summary}\n"
             f"💸 ค่าปรับรอบนี้: {fine:g} บาท\n"
             f"💰 รวมค่าปรับสะสมวันนี้: {stats.total_fine:g} บาท",
             reply_markup=keyboard_markup(),
